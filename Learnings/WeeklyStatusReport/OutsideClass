@@ -2,7 +2,9 @@ What you learnt outside the class?
 Be specific...
 
 Week1
-
-#1 I read the paper "X" and I learnt that software engineering is multi-disciplinary subject
-#2 I discussed with Krishna about design of software and we debated on different facets of software enigneering.
-Is it art, science or what?
+  i) Started learning TypeScript. Found out that TypeScript is a superset of JavaScript. So, I am checking out the new features
+     introduced in TypeScript that are not present in JavaScript.
+     
+  ii) I read about how binary search trees can be inefficient sometimes and how to combat this problem by balancing them.
+  
+  iii) I want to improve my coding standards. So, I searched on the net for resources and downloaded a book: Programming Pearls.
