@@ -1,0 +1,28 @@
+function integer_classification(){
+	var sum:number=0, i:number,j:number;
+	var try:number=0;
+	var number_list:number[]={1,0,0};
+	for(i=2;i<=20000;i++){
+		try=i/2;
+		sum=1;
+		for(j=2;j<try;j++){
+			if (i%j)
+				continue;
+			try=i/j;
+			sum+=j;
+			if (j!=try)
+				sum+=try;
+		}
+		if (sum<i){
+			number_list[d]++;
+			continue;
+		}
+		else if (sum>i){
+			number_list[a]++;
+			continue;
+		}
+		number_list[p]++;
+	}
+	console.log('There are '+number_list[d]+ ' deficient , ' + 'number_list[p] + ' perfect and '+ number_list[a]+ ' abundant numbers
+between 1 and 20000');
+}
