@@ -1,0 +1,19 @@
+import 'dart:math';
+
+factors(n)
+{
+ var factorsArr = [];
+ factorsArr.add(n);
+ factorsArr.add(1);
+ for(var test = n - 1; test >= sqrt(n).toInt(); test--)
+  if(n % test == 0)
+  {
+   factorsArr.add(test);
+   factorsArr.add(n / test);
+  }
+ return factorsArr;
+}
+
+void main() {
+  print(factors(5688));
+}
