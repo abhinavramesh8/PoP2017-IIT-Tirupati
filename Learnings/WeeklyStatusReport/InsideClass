@@ -18,3 +18,10 @@ Week3
   ii) Learnt the basics of functional programming in Haskell. I also learnt about the characteristic features
       of Haskell such as lazy evaluation.
   iii) I learnt the basics of Python and its object-oriented features. 
+
+Week4
+
+  i) Learnt about grammars and how they generate languages(teminals, non-terminals and productions).
+  ii) I learnt about Backus Naur Form.
+  iii) I learnt about parse trees and derivations.
+  iv) I also learnt that grammars can be ambiguous.
