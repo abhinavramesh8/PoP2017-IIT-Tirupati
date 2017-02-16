@@ -67,6 +67,8 @@ class Interpreter{
 			tk.type = INTEGER;
 		if(current_char=='+') tk.type = PLUS;
 		if(current_char=='-') tk.type = MINUS;
+		if(current_char=='/') tk.type = DIVIDE;
+		if(current_char=='*') tk.type = MULTIPLY;
 		return tk;
 		}
  	}
@@ -109,7 +111,20 @@ class Interpreter{
 	eat(INTEGER);
 	left.value = left.value-'0';
 	right.value = right.value - '0';
- 	return (int)left.value+right.value;
+	switch(op.type) {
+		case ADD: return (int)left.value+right.value;
+			  break;
+		
+		case MINUS: return (int)left.value-right.value;
+			    break;
+			
+		case MULTIPLY: return (int)left.value*right.value;
+			       break;
+			
+		case DIVIDE: return (int)left.value/right.value;
+			     break;
+	}
+ 	
  	}
  	
  	};
