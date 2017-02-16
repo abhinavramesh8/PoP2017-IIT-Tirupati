@@ -113,27 +113,35 @@ class Interpreter{
  	return res;
  	}
  	
+ 	int term()
+ 	{	
+ 		Token tk = current_token;
+ 		eat(INTEGER);
+ 		return tk.int_value;
+ 	}
+ 	
  	int calc(){
 		
 		advance();
-		Token left,right,op;
 		current_token = get_next_token();
-		left = current_token;
-		eat(INTEGER);
-		op = current_token;
-		eat(op.type);
-		right = current_token;
-		eat(INTEGER);
+		int result = term();
+		Token left,right,op;
+		while(current_token.type == PLUS||current_token.type==MINUS)
+			{
+				op = current_token;
+				if(op.type==PLUS)
+				{
+					eat(PLUS);
+					result = result+term();
+				}
+				else if(op.type==MINUS)
+				{
+					eat(MINUS);
+					result = result - term();
+				}
+			}
 		
-		
-			if(op.type==PLUS)
-	 		return left.int_value+right.int_value;
- 			if(op.type==MINUS)
- 			return left.int_value-right.int_value;
- 			if(op.type==MULTIPLY)
- 			return left.int_value*right.int_value;
- 			if(op.type==DIVIDE)
- 			return left.int_value/right.int_value;
+		return result;
  	}
  	
  	};
