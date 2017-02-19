@@ -23,3 +23,21 @@ Week4
   i) Solved 2 Dart problems in Rosetta Code.
   ii) I learnt about grammars, derivations and the types of grammars, especially context-free grammars.
   iii) I experimeted with the C++ Standard Template Library. I have started using templates in my programs.
+  
+Week5
+  i) I experimented with object oriented programming.
+  ii) I also read a bit about TypeScript and what makes it different from JavaScript.
+  
+ Week6
+  i) I learnt a lot about my language by reading the TypeScript specification.
+  ii) I tried coding some algorithmic problems by using TypeScript.
+  iii) I also experimented with the object-oriented features of TypeSCript as well as modules.
+  iv) I found a good deal as to what TypeScrift offers and how it adds to JavaScript.
+  v) I read about compiler/interpreter design and I learnt how to evaluate arithmetic expressions.
+  
+  Week7
+    i) Continued learning about how to crete interpreters.
+    ii) Learnt how to parse strings and to create parse trees.
+    iii) I learnt about lexers and tokens.
+    iv) I implemented circular array and stacks using TypeScript and realized that TypeScript is a lot better than JavaScript.
+    
