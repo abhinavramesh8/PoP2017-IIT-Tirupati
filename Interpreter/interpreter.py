@@ -8,10 +8,10 @@ from errors import TypescriptSyntaxError, report_syntax_error
 from utils import print_ast, print_tokens, print_env
 
 
-BuiltinFunction = namedtuple('BuiltinFunction', ['params', 'body'])
+BuiltinFunction = namedtuple('BuiltinFunction', ['params', 'body'])        # we are using some builtin function for printing
 
 
-class Break(Exception):
+class Break(Exception):        #classes for break and continue and return
     pass
 
 
@@ -24,36 +24,8 @@ class Return(Exception):
         self.value = value
 
 
-class Environment(object):
 
-    def __init__(self, parent=None, args=None):
-        self._parent = parent
-        self._values = {}
-        if args is not None:
-            self._from_dict(args)
-
-    def _from_dict(self, args):
-        for key, value in args.items():
-            self.set(key, value)
-
-    def set(self, key, val):
-        self._values[key] = val
-
-    def get(self, key):
-        val = self._values.get(key, None)
-        if val is None and self._parent is not None:
-            return self._parent.get(key)
-        else:
-            return val
-
-    def asdict(self):
-        return self._values
-
-    def __repr__(self):
-        return 'Environment({})'.format(str(self._values))
-
-
-def eval_binary_operator(node, env):
+def eval_binary_operator(node, env):           # function for evalutating binary operators
     simple_operations = {
         '+': operator.add,
         '-': operator.sub,
@@ -81,7 +53,7 @@ def eval_binary_operator(node, env):
         raise Exception('Invalid operator {}'.format(node.operator))
 
 
-def eval_unary_operator(node, env):
+def eval_unary_operator(node, env):        # for evaluating unary operators
     operations = {
         '-': operator.neg,
         '!': operator.not_,
@@ -89,14 +61,14 @@ def eval_unary_operator(node, env):
     return operations[node.operator](eval_expression(node.right, env))
 
 
-def eval_assignment(node, env):
+def eval_assignment(node, env):                          # for evalutating assignment conditions
     if isinstance(node.left, ast.SubscriptOperator):
         return eval_setitem(node, env)
     else:
         return env.set(node.left.value, eval_expression(node.right, env))
 
 
-def eval_condition(node, env):
+def eval_condition(node, env):                            #for evaulating conditional statements
     if eval_expression(node.test, env):
         return eval_statements(node.if_body, env)
 
@@ -125,7 +97,7 @@ def eval_call(node, env):
     n_expected_args = len(function.params)
     n_actual_args = len(node.arguments)
     if n_expected_args != n_actual_args:
-        raise TypeError('Expected {} arguments, got {}'.format(n_expected_args, n_actual_args))
+        raise TypeError('Expected {} arguments, got {}'.format(n_expected_args, n_actual_args))    #type error for incorrect num of args
     args = dict(zip(function.params, [eval_expression(node, env) for node in node.arguments]))
     if isinstance(function, BuiltinFunction):
         return function.body(args, env)
@@ -137,7 +109,7 @@ def eval_call(node, env):
             return ret.value
 
 
-def eval_identifier(node, env):
+def eval_identifier(node, env):               # for evaulating the names like name of a function and of a variable
     name = node.value
     val = env.get(name)
     if val is None:
@@ -145,32 +117,22 @@ def eval_identifier(node, env):
     return val
 
 
-def eval_getitem(node, env):
-    collection = eval_expression(node.left, env)
-    key = eval_expression(node.key, env)
-    return collection[key]
 
 
-def eval_setitem(node, env):
+def eval_setitem(node, env):                         # setting values for given items
     collection = eval_expression(node.left.left, env)
     key = eval_expression(node.left.key, env)
     collection[key] = eval_expression(node.right, env)
 
-
-def eval_array(node, env):
-    return [eval_expression(item, env) for item in node.items]
-
 def eval_return(node, env):
     return eval_expression(node.value, env) if node.value is not None else None
 
-evaluators = {
-    ast.Number: lambda node, env: node.value,
+evaluators = {                                     #maps different evaulation function in parser with different function in interpreter
+    ast.Number: lambda node, env: node.value,               
     ast.String: lambda node, env: node.value,
-    ast.Array: eval_array,
     ast.Identifier: eval_identifier,
     ast.BinaryOperator: eval_binary_operator,
     ast.UnaryOperator: eval_unary_operator,
-    ast.SubscriptOperator: eval_getitem,
     ast.Assignment: eval_assignment,
     ast.Condition: eval_condition,
     ast.WhileLoop: eval_while_loop,
@@ -180,8 +142,8 @@ evaluators = {
 }
 
 
-def eval_node(node, env):
-    tp = type(node)
+def eval_node(node, env):              #evaulating different nodes
+    tp = type(node) 
     if tp in evaluators:
         return evaluators[tp](node, env)
     else:
@@ -192,19 +154,19 @@ def eval_expression(node, env):
     return eval_node(node, env)
 
 
-def eval_statement(node, env):
+def eval_statement(node, env):                       #evaluating statement           
     return eval_node(node, env)
 
 
-def eval_statements(statements, env):
+def eval_statements(statements, env):                 # evaluating statements
     ret = None
     for statement in statements:
-        if isinstance(statement, ast.Break):
+        if isinstance(statement, ast.Break):           #special case of break statement
             raise Break(ret)
-        elif isinstance(statement, ast.Continue):
+        elif isinstance(statement, ast.Continue):         #special case of continue statement
             raise Continue(ret)
-        ret = eval_statement(statement, env)
-        if isinstance(statement, ast.Return):
+        ret = eval_statement(statement, env)              #evaulating statements
+        if isinstance(statement, ast.Return):      #special case of return statement
             raise Return(ret)
     return ret
 
@@ -234,7 +196,7 @@ def evaluate_env(s, env, verbose=False):
         else:
             return
 
-    if verbose:
+    if verbose:                             # if verbose is passed as true it will prints tokens as parse trees for different statements
         print('Tokens')
         print_tokens(tokens)
         print()
@@ -263,6 +225,36 @@ def evaluate_env(s, env, verbose=False):
         print()
 
     return ret
-    
+
+
 def evaluate(s, verbose=False):
     return evaluate_env(s, create_global_env(), verbose)
+    
+    
+class Environment(object):                   #classes for representing environment
+
+    def __init__(self, parent=None, args=None):
+        self._parent = parent
+        self._values = {}
+        if args is not None:
+            self._from_dict(args)
+
+    def _from_dict(self, args):
+        for key, value in args.items():
+            self.set(key, value)
+
+    def set(self, key, val):
+        self._values[key] = val
+
+    def get(self, key):
+        val = self._values.get(key, None)
+        if val is None and self._parent is not None:
+            return self._parent.get(key)
+        else:
+            return val
+
+    def asdict(self):
+        return self._values
+
+    def __repr__(self):
+        return 'Environment({})'.format(str(self._values))
