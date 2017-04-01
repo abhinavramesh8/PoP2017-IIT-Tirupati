@@ -4,15 +4,15 @@ from errors import TypescriptSyntaxError as LexerError
 from ttt import iteritems
 
 
-class Token(namedtuple('Token', ['name', 'value', 'line', 'column'])):
+class Token(namedtuple('Token', ['name', 'value', 'line', 'column'])):          #token class for different types of tokens
 
     def __repr__(self):
         return str(tuple(self))
 
 
 def decode_str(s):
-    regex = re.compile(r'\\(r|n|t|\\|\'|")')
-    chars = {
+    regex = re.compile(r'\\(r|n|t|\\|\'|")')                    
+    chars = {                                           #reular expressions for a string
         'r': '\r',
         'n': '\n',
         't': '\t',
@@ -30,14 +30,14 @@ def decode_str(s):
     return regex.sub(replace, s[1:-1])
 
 
-def decode_num(s):
+def decode_num(s):                                # for decoding string
     try:
         return int(s)
     except ValueError:
         return float(s)
 
 
-class Lexer(object):
+class Lexer(object):                    #contains different types of tokens which can be present
 
     rules = [
         ('COMMENT', r'//.*'),
@@ -65,7 +65,7 @@ class Lexer(object):
         ('SEMICOLON',';'),
     ]
 
-    keywords = {
+    keywords = {                         # different types of keywords present in the language
         'function': 'FUNCTION',
         'return': 'RETURN',
         'else': 'ELSE',
@@ -74,19 +74,16 @@ class Lexer(object):
         'while': 'WHILE',
         'break': 'BREAK',
         'continue': 'CONTINUE',
-        'for': 'FOR',
-        'in': 'IN',
-        'match': 'MATCH',
         'when': 'WHEN',
     }
 
-    ignore_tokens = [
+    ignore_tokens = [                     # whitespaces and newlines and comments are to be ignored
         'WHITESPACE',
         'COMMENT',
         'NEWLINE',
     ]
 
-    decoders = {
+    decoders = {											#tokens that are needed to be decoded
         'STRING': decode_str,
         'NUMBER': decode_num,
     }
@@ -154,13 +151,13 @@ class Lexer(object):
         return tokens
 
 
-class TokenStream(object):
+class TokenStream(object):                  #tokens stream class which contain a  list of tokens
 
     def __init__(self, tokens):
         self._tokens = tokens
         self._pos = 0
 
-    def consume_expected(self, *args):
+    def consume_expected(self, *args):              # consumes the given type of token
         token = None
         for expected_name in args:
             token = self.consume()
@@ -168,7 +165,7 @@ class TokenStream(object):
                 raise LexerError('Expected {}, got {}'.format(expected_name, token.name), token.line, token.column)
         return token
 
-    def consume(self):
+    def consume(self):                      # consuming a particular token
         token = self.current()
         self._pos += 1
         return token
