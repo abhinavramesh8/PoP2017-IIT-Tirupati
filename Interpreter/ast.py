@@ -1,4 +1,4 @@
-from collections import namedtuple
+from collections import namedtuple                # this file is used to classify the different parts of a program
 
 Number = namedtuple('Number', ['value'])
 String = namedtuple('String', ['value'])
