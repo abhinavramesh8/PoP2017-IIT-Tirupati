@@ -1,4 +1,4 @@
-class TypescriptSyntaxError(Exception):
+lass TypescriptSyntaxError(Exception):
 
 	def __init__(self,message,line,column):
 		super(TypescriptSyntaxError,self).__init__(message)
