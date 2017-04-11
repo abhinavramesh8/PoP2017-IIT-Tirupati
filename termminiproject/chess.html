@@ -1,0 +1,84 @@
+<!DOCTYPE HTML>
+
+<html lang = "en-US">
+<meta charset = "UTF-8">
+<head>
+<link rel = "stylesheet" type  = "text/css" href = "chess.css" />
+<script src = "jquery-3.2.0.min.js" type = "text/javascript"></script>
+<script src = "chess.js"></script>
+
+</head>
+<body>
+	<label id = "l1"><h1>first player turn</h1></label><div id = "l3"></div></br>
+	<label id = "l2"></label>
+
+	<button type = "button"class = "bt bt_bl" id = "a_1" data-attribute = "black_rook" />
+	<button type = "button"class = "bt"id = "a_2" data-attribute = "black_knight" />
+	<button type = "button"class = "bt bt_bl"id = "a_3" data-attribute = "black_bishop" />
+	<button type = "button"class = "bt"id = "a_4" data-attribute = "black_king" />
+	<button type = "button"class = "bt bt_bl"id = "a_5" data-attribute = "black_queen" />
+	<button type = "button"class = "bt"id = "a_6" data-attribute = "black_bishop" />
+	<button type = "button"class = "bt bt_bl"id = "a_7" data-attribute = "black_knight" />
+	<button type = "button"class = "bt"id = "a_8" data-attribute = "black_rook" />
+	
+	<button type = "button"class = "bt"id = "b_1" data-attribute = "black_pawn" />
+	<button type = "button"class = "bt bt_bl"id = "b_2" data-attribute = "black_pawn" />
+	<button type = "button"class = "bt"id = "b_3" data-attribute = "black_pawn" />
+	<button type = "button"class = "bt bt_bl"id = "b_4" data-attribute = "black_pawn" />
+	<button type = "button"class = "bt"id = "b_5" data-attribute = "black_pawn" />
+	
+	<button type = "button"class = "bt bt_bl"id = "b_6" data-attribute = "black_pawn" />
+	<button type = "button"class = "bt"id = "b_7" data-attribute = "black_pawn" />
+	
+	<button type = "button"class = "bt bt_bl"id = "b_8" data-attribute = "black_pawn" />
+	<button type = "button"class = "bt bt_bl"id = "c_1" data-attribute = "blank" />
+	<button type = "button"class = "bt"id = "c_2" data-attribute = "blank" />
+	<button type = "button"class = "bt bt_bl"id = "c_3" data-attribute = "blank" />
+	<button type = "button"class = "bt"id = "c_4" data-attribute = "blank" />
+	<button type = "button"class = "bt bt_bl"id = "c_5" data-attribute = "blank" />
+	<button type = "button"class = "bt"id = "c_6" data-attribute = "blank" />
+	<button type = "button"class = "bt bt_bl"id = "c_7" data-attribute = "blank" />
+	<button type = "button"class = "bt"id = "c_8" data-attribute = "blank" />
+	<button type = "button"class = "bt"id = "d_1" data-attribute = "blank" />
+	<button type = "button"class = "bt bt_bl"id = "d_2" data-attribute = "blank" />
+	<button type = "button"class = "bt"id = "d_3" data-attribute = "blank" />
+	<button type = "button"class = "bt bt_bl"id = "d_4" data-attribute = "blank" />
+	<button type = "button"class = "bt"id = "d_5" data-attribute = "blank" />
+	<button type = "button"class = "bt bt_bl"id = "d_6" data-attribute = "blank" />
+	<button type = "button"class = "bt"id = "d_7" data-attribute = "blank" />
+	<button type = "button"class = "bt bt_bl"id = "d_8" data-attribute = "blank" />
+	<button type = "button"class = "bt bt_bl"id = "e_1" data-attribute = "blank" />
+	<button type = "button"class = "bt"id = "e_2" data-attribute = "blank" />
+	<button type = "button"class = "bt bt_bl"id = "e_3" data-attribute = "blank" />
+	<button type = "button"class = "bt"id = "e_4" data-attribute = "blank" />
+	<button type = "button"class = "bt bt_bl"id = "e_5" data-attribute = "blank" />
+	<button type = "button"class = "bt"id = "e_6" data-attribute = "blank" />
+	<button type = "button"class = "bt bt_bl"id = "e_7" data-attribute = "blank" />
+	<button type = "button"class = "bt"id = "e_8" data-attribute = "blank" />
+	<button type = "button"class = "bt"id = "f_1" data-attribute = "blank" />
+	<button type = "button"class = "bt bt_bl"id = "f_2" data-attribute = "blank" />
+	<button type = "button"class = "bt"id = "f_3" data-attribute = "blank" />
+	<button type = "button"class = "bt bt_bl"id = "f_4" data-attribute = "blank" />
+	<button type = "button"class = "bt"id = "f_5" data-attribute = "blank" />
+	<button type = "button"class = "bt bt_bl"id = "f_6" data-attribute = "blank" />
+	<button type = "button"class = "bt"id = "f_7" data-attribute = "blank" />
+	<button type = "button"class = "bt bt_bl"id = "f_8" data-attribute = "blank" />
+	<button type = "button"class = "bt bt_bl"id = "g_1" data-attribute = "white_pawn" />
+	<button type = "button"class = "bt"id = "g_2" data-attribute = "white_pawn" />
+	<button type = "button"class = "bt bt_bl"id = "g_3" data-attribute = "white_pawn" />
+	<button type = "button"class = "bt"id = "g_4" data-attribute = "white_pawn" />
+	<button type = "button"class = "bt bt_bl"id = "g_5" data-attribute = "white_pawn" />
+	<button type = "button"class = "bt"id = "g_6" data-attribute = "white_pawn" />
+	<button type = "button"class = "bt bt_bl"id = "g_7" data-attribute = "white_pawn" />
+	<button type = "button"class = "bt"id = "g_8" data-attribute = "white_pawn" />
+	<button type = "button"class = "bt"id = "h_1" data-attribute = "white_rook" />
+	<button type = "button"class = "bt bt_bl"id = "h_2" data-attribute = "white_knight" />
+	<button type = "button"class = "bt"id = "h_3" data-attribute = "white_bishop" />
+	<button type = "button"class = "bt bt_bl"id = "h_4" data-attribute = "white_queen" />
+	<button type = "button"class = "bt"id = "h_5" data-attribute = "white_king" />
+	<button type = "button"class = "bt bt_bl"id = "h_6" data-attribute = "white_bishop" />
+	<button type = "button"class = "bt"id = "h_7" data-attribute = "white_knight" />
+	<button type = "button"class = "bt bt_bl"id = "h_8" data-attribute = "white_rook" />
+	
+</body>
+</html>
