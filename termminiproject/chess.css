@@ -1,0 +1,532 @@
+body{
+	background-color: brown;
+}
+
+
+#a_1{
+position: fixed;
+top: 150px;
+left: 350px;
+width: 50px;
+height: 50px;
+background-image: url("black_rook.png");
+background-color: brown;
+}
+#a_2{
+position: fixed;
+top: 150px;
+left: 400px;
+width: 50px;
+height: 50px;
+background-image: url("black_knight.png");
+background-color: white;
+}
+#a_3{
+position: fixed;
+top: 150px;
+left: 450px;
+width: 50px;
+height: 50px;
+background-image: url("black_bishop.png");
+background-color: brown;
+}
+#a_4{
+position: fixed;
+top: 150px;
+left: 500px;
+width: 50px;
+height: 50px;
+background-image: url("black_king.png");
+background-color: white;
+}
+#a_5{
+position: fixed;
+top: 150px;
+left: 550px;
+width: 50px;
+height: 50px;
+background-image: url("black_queen.png");
+background-color: brown;
+}#a_6{
+position: fixed;
+top: 150px;
+left: 600px;
+width: 50px;
+height: 50px;
+background-image: url("black_bishop.png");
+background-color: white;
+}#a_7{
+position: fixed;
+top: 150px;
+left: 650px;
+width: 50px;
+height: 50px;
+background-image: url("black_knight.png");
+background-color: brown;
+}#a_8{
+position: fixed;
+top: 150px;
+left: 700px;
+width: 50px;
+height: 50px;
+background-image: url("black_rook.png");
+background-color: white;
+}
+#b_1{
+position: fixed;
+top: 200px;
+left: 350px;
+width: 50px;
+height: 50px;
+background-image: url("black_pawn.png");
+background-color: white;
+}#b_2{
+position: fixed;
+top: 200px;
+left: 400px;
+width: 50px;
+height: 50px;
+background-image: url("black_pawn.png");
+background-color: brown;
+}#b_3{
+position: fixed;
+top: 200px;
+left: 450px;
+width: 50px;
+height: 50px;
+background-image: url("black_pawn.png");
+background-color: white;
+}#b_4{
+position: fixed;
+top: 200px;
+left: 500px;
+width: 50px;
+height: 50px;
+background-image: url("black_pawn.png");
+background-color: brown;
+}#b_5{
+position: fixed;
+top: 200px;
+left: 550px;
+width: 50px;
+height: 50px;
+background-image: url("black_pawn.png");
+background-color: white;
+}#b_6{
+position: fixed;
+top: 200px;
+left: 600px;
+width: 50px;
+height: 50px;
+background-image: url("black_pawn.png");
+background-color: brown;
+}
+#b_7{
+position: fixed;
+top: 200px;
+left: 650px;
+width: 50px;
+height: 50px;
+background-image: url("black_pawn.png");
+background-color: white;
+}
+#b_8{
+position: fixed;
+top: 200px;
+left: 700px;
+width: 50px;
+height: 50px;
+background-image: url("black_pawn.png");
+background-color: brown;
+}#c_1{
+position: fixed;
+top: 250px;
+left: 350px;
+width: 50px;
+height: 50px;
+background-color: brown;
+}#c_2{
+position: fixed;
+top: 250px;
+left: 400px;
+width: 50px;
+height: 50px;
+background-color: white;
+}#c_3{
+position: fixed;
+top: 250px;
+left: 450px;
+width: 50px;
+height: 50px;
+background-color: brown;
+}#c_4{
+position: fixed;
+top: 250px;
+left: 500px;
+width: 50px;
+height: 50px;
+background-color: white;
+}#c_5{
+position: fixed;
+top: 250px;
+left: 550px;
+width: 50px;
+height: 50px;
+background-color: brown;
+}#c_6{
+position: fixed;
+top: 250px;
+left: 600px;
+width: 50px;
+height: 50px;
+background-color: white;
+}#c_7{
+position: fixed;
+top: 250px;
+left: 650px;
+width: 50px;
+height: 50px;
+background-color: brown;
+}#c_8{
+position: fixed;
+top: 250px;
+left: 700px;
+width: 50px;
+height: 50px;
+background-color: white;
+}#d_1{
+position: fixed;
+top: 300px;
+left: 350px;
+width: 50px;
+height: 50px;
+background-color: white;
+}#d_2{
+position: fixed;
+top: 300px;
+left: 400px;
+width: 50px;
+height: 50px;
+background-color: brown;
+}
+#d_3{
+position: fixed;
+top: 300px;
+left: 450px;
+width: 50px;
+height: 50px;
+background-color: white;
+}
+#d_4{
+position: fixed;
+top: 300px;
+left: 500px;
+width: 50px;
+height: 50px;
+background-color: brown;
+}
+#d_5{
+position: fixed;
+top: 300px;
+left: 550px;
+width: 50px;
+height: 50px;
+background-color: white;
+}
+#d_6{
+position: fixed;
+top: 300px;
+left: 600px;
+width: 50px;
+height: 50px;
+background-color: brown;
+}
+#d_7{
+position: fixed;
+top: 300px;
+left: 650px;
+width: 50px;
+height: 50px;
+background-color: white;
+}
+#d_8{
+position: fixed;
+top: 300px;
+left: 700px;
+width: 50px;
+height: 50px;
+background-color: brown;
+}
+#e_1{
+position: fixed;
+top: 350px;
+left: 350px;
+width: 50px;
+height: 50px;
+background-color: brown;
+}
+#e_2{
+position: fixed;
+top: 350px;
+left: 400px;
+width: 50px;
+height: 50px;
+background-color: white;
+}
+#e_3{
+position: fixed;
+top: 350px;
+left: 450px;
+width: 50px;
+height: 50px;
+background-color: brown;
+}
+#e_4{
+position: fixed;
+top: 350px;
+left: 500px;
+width: 50px;
+height: 50px;
+background-color: white;
+}
+#e_5{
+position: fixed;
+top: 350px;
+left: 550px;
+width: 50px;
+height: 50px;
+background-color: brown;
+}
+#e_6{
+position: fixed;
+top: 350px;
+left: 600px;
+width: 50px;
+height: 50px;
+background-color: white;
+}
+#e_7{
+position: fixed;
+top: 350px;
+left: 650px;
+width: 50px;
+height: 50px;
+background-color: brown;
+}
+#e_8{
+position: fixed;
+top: 350px;
+left: 700px;
+width: 50px;
+height: 50px;
+background-color: white;
+}
+#f_1{
+position: fixed;
+top: 400px;
+left: 350px;
+width: 50px;
+height: 50px;
+background-color: white;
+}
+#f_2{
+position: fixed;
+top: 400px;
+left: 400px;
+width: 50px;
+height: 50px;
+background-color: brown;
+}
+#f_3{
+position: fixed;
+top: 400px;
+left: 450px;
+width: 50px;
+height: 50px;
+background-color: white;
+}
+#f_4{
+position: fixed;
+top: 400px;
+left: 500px;
+width: 50px;
+height: 50px;
+background-color: brown;
+}
+#f_5{
+position: fixed;
+top: 400px;
+left: 550px;
+width: 50px;
+height: 50px;
+background-color: white;
+}
+#f_6{
+position: fixed;
+top: 400px;
+left: 600px;
+width: 50px;
+height: 50px;
+background-color: brown;
+}
+#f_7{
+position: fixed;
+top: 400px;
+left: 650px;
+width: 50px;
+height: 50px;
+background-color: white;
+}
+#f_8{
+position: fixed;
+top: 400px;
+left: 700px;
+width: 50px;
+height: 50px;
+background-color: brown;
+}
+
+#g_1{
+position: fixed;
+top: 450px;
+left: 350px;
+width: 50px;
+height: 50px;
+background-image: url("white_pawn.png");
+background-color: brown;
+}
+#g_2{
+position: fixed;
+top: 450px;
+left: 400px;
+width: 50px;
+height: 50px;
+background-image: url("white_pawn.png");
+background-color: white;
+}
+#g_3{
+position: fixed;
+top: 450px;
+left: 450px;
+width: 50px;
+height: 50px;
+background-image: url("white_pawn.png");
+background-color: brown;
+}
+#g_4{
+position: fixed;
+top: 450px;
+left: 500px;
+width: 50px;
+height: 50px;
+background-image: url("white_pawn.png");
+background-color: white;
+}
+#g_5{
+position: fixed;
+top: 450px;
+left: 550px;
+width: 50px;
+height: 50px;
+background-image: url("white_pawn.png");
+background-color: brown;
+}
+#g_6{
+position: fixed;
+top: 450px;
+left: 600px;
+width: 50px;
+height: 50px;
+background-image: url("white_pawn.png");
+background-color: white;
+}
+#g_7{
+position: fixed;
+top: 450px;
+left: 650px;
+width: 50px;
+height: 50px;
+background-image: url("white_pawn.png");
+background-color: brown;
+}
+#g_8{
+position: fixed;
+top: 450px;
+left: 700px;
+width: 50px;
+height: 50px;
+background-image: url("white_pawn.png");
+background-color: white;
+}
+#h_1{
+position: fixed;
+top: 500px;
+left: 350px;
+width: 50px;
+height: 50px;
+background-image: url("white_rook.png");
+background-color: white;
+}
+#h_2{
+position: fixed;
+top: 500px;
+left: 400px;
+width: 50px;
+height: 50px;
+background-image: url("white_knight.png");
+background-color: brown;
+}
+#h_3{
+position: fixed;
+top: 500px;
+left: 450px;
+width: 50px;
+height: 50px;
+background-image: url("white_bishop.png");
+background-color: white;
+}
+#h_4{
+position: fixed;
+top: 500px;
+left: 500px;
+width: 50px;
+height: 50px;
+background-image: url("white_queen.png");
+background-color: brown;
+}
+#h_5{
+position: fixed;
+top: 500px;
+left: 550px;
+width: 50px;
+height: 50px;
+background-image: url("white_king.png");
+background-color: white;
+}
+#h_6{
+position: fixed;
+top: 500px;
+left: 600px;
+width: 50px;
+height: 50px;
+background-image: url("white_bishop.png");
+background-color: brown;
+}
+#h_7{
+position: fixed;
+top: 500px;
+left: 650px;
+width: 50px;
+height: 50px;
+background-image: url("white_knight.png");
+background-color: white;
+}
+#h_8{
+position: fixed;
+top: 500px;
+left: 700px;
+width: 50px;
+height: 50px;
+background-image: url("white_rook.png");
+background-color: brown;
+}
